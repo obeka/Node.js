@@ -20,15 +20,14 @@ const punchlines = [
   'help people learn programing',
 ];
 const getRandomWord = () => {
-  const ranNum1 = Math.floor(Math.random() * 7);
-  const ranNum2 = Math.floor(Math.random() * 7);
-  return [subjects[ranNum1], punchlines[ranNum2]];
+  const ranNum = Math.floor(Math.random() * 7);
+  return ranNum;
 }
 
 
 const drawCard = () => {
-  const subjectRan = getRandomWord()[0];
-  const punchlineRan = getRandomWord()[1];
+  const subjectRan = subjects[getRandomWord()];
+  const punchlineRan = punchlines[getRandomWord()];
   const cardData = {
     subject : subjectRan,
     punchline : punchlineRan

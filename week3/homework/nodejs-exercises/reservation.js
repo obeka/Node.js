@@ -5,9 +5,12 @@ const makeReservation = async (guest) => {
     const response = await fetch('https://reservation100-sandbox.mxapps.io/api/reservations', {
       method: 'post',
       body: JSON.stringify(guest),
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
     });
-    console.log(response.status)
+    const responseText = await response.text();
+    console.log(responseText);
   } catch (error) {
     console.log(error)
   }
